@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BeneficioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'beneficio');
 
-Route::post('/enviar', 'BeneficioController@enviarParaAPI')->name('enviar');
+Route::get("/enviar", [BeneficioController::class, "enviarParaAPI"]);

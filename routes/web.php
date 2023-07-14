@@ -13,6 +13,9 @@ use App\Http\Controllers\BeneficioController;
 |
 */
 
-Route::view('/', 'beneficio');
+Route::get('/', function () {
+    return view('beneficio');
+});
 
-Route::get("/enviar", [BeneficioController::class, "enviarParaAPI"]);
+// Route::post("/enviar", [BeneficioController::class, "enviarParaAPI"]);
+Route::post("/enviar", [BeneficioController::class, "store"])->name("enviar.store");

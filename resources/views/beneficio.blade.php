@@ -81,10 +81,9 @@
                 Formulário de solicitação de benefcio
                 </div>
 
-      
-            <form method="POST" action="{{route('enviar') }}" class="container" style="text-align: left;">
-                    @csrf  
-                    @method('POST')
+
+            <form method="POST" action="{{ route('enviar.store') }}" class="container" style="text-align: left;">
+                    @csrf
                 <div class="row">
                 <div  class="col-md-6">
                 <div class="row g-3">
@@ -184,7 +183,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>
       <br/><br/>
                 <div class="d-grid gap-2">

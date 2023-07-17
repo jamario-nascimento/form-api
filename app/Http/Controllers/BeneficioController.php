@@ -72,27 +72,27 @@ class BeneficioController extends Controller
         );
 
 
-$client = new Client([
-    'verify' => false
-]);
-$headers = ['headers' => ['User-Agent' => 'testing/1.0','Accept'     => 'application/json','X-Foo'      => ['Bar', 'Baz']]];
-$url = "https://fusionhmg.sebraeprevidencia.com.br/fusion/services/termo-opcao-beneficio/novo";
-$response = $client->post($url,['json' =>$data]);
-// $response = $request->send();
-// echo '<pre>' . var_export($response->getStatusCode(), true) . '</pre>';
-// $resposta = json_decode(var_export($response->getBody()->getContents(), true),true);
-$respostas = json_decode($response->getBody()->getContents(),true);
+            $client = new Client([
+                'verify' => false
+            ]);
+            $headers = ['headers' => ['User-Agent' => 'testing/1.0','Accept'     => 'application/json','X-Foo'      => ['Bar', 'Baz']]];
+            $url = "https://fusionhmg.sebraeprevidencia.com.br/fusion/services/termo-opcao-beneficio/novo";
+            $response = $client->post($url,['json' =>$data]);
+            // $response = $request->send();
+            // echo '<pre>' . var_export($response->getStatusCode(), true) . '</pre>';
+            // $resposta = json_decode(var_export($response->getBody()->getContents(), true),true);
+            $respostas = json_decode($response->getBody()->getContents(),true);
 
-echo '<div class="flex-center position-ref full-height" style="margin-top:10%">';
-echo '<div class="container">';
-foreach ($respostas as $r) {
-    echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">';
-    echo '<div class="alert alert-success" role="alert">'. $r .'</div>';
-}
+            echo '<div class="flex-center position-ref full-height" style="margin-top:10%">';
+            echo '<div class="container">';
+            foreach ($respostas as $r) {
+                echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">';
+                echo '<div class="alert alert-success" role="alert">'. $r .'</div>';
+            }
 
-echo '<a href="/" class="btn btn-warning   mb-3">Voltar</a>';
-echo '</div>';
-echo '</div>';
+            echo '<a href="/" class="btn btn-warning   mb-3">Voltar</a>';
+            echo '</div>';
+            echo '</div>';
 
     }
 
